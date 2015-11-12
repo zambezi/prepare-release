@@ -1,6 +1,6 @@
 {
   "name": "prepare-release",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Utilities to prepare a repository for releasing to npm",
   "bin": {
     "prepare-release": "bin/prepare-release.sh"
