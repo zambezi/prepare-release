@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 setup() {
-  PATH="$(npm bin):${PATH}"
-  alias prepare-release="${BATS_TEST_DIRNAME}/../bin/prepare-release.sh"
+  PATH="${BATS_TEST_DIRNAME}/../bin:$(npm bin):${PATH}"
   repo="${BATS_TMPDIR}/project"
   cp -R "${BATS_TEST_DIRNAME}/project" "${repo}"
   
