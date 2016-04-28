@@ -69,3 +69,17 @@ load fixture
   [[ "${status}" -eq 0 ]]
   [[  $(npm-inspect version) == "0.0.0" ]]
 }
+
+@test "should force a release when -f|--force is present" {
+  run prepare-release.sh major
+  [[ "${status}" -eq 0 ]]
+  [[ "${output}" == "v1.0.0" ]]
+
+  run prepare-release.sh --force major
+  [[ "${status}" -eq 0 ]]
+  [[ "${output}" == "v2.0.0" ]]
+
+  run prepare-release.sh -f major
+  [[ "${status}" -eq 0 ]]
+  [[ "${output}" == "v3.0.0" ]]
+}

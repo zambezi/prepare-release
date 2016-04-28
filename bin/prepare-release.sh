@@ -15,13 +15,19 @@ popd > /dev/null
 
 usage() {
 cat <<USAGE
-Usage: prepare-release [--dry] <level> [-m|--message <message>]
+Usage: prepare-release [--dry] [-f|--force] <level> [-m|--message <message>]
 
 [--dry]
 
     Perform a dry-run instead of committing a new version. Useful
     when checking to see that the given options will have the
     intended effect.
+
+[-f|--force]
+
+    Ignore the previous commit when preparing a release. This is
+    useful when going from a pre-release version to an untagged
+    version.
 
 <level>
 
@@ -73,6 +79,13 @@ if [[ "${1}" == "--dry" ]]; then
   shift
 fi
 
+case "${1}" in
+  "-f" | "--force")
+    force=1
+    shift
+    ;;
+esac
+
 level="${1:-prerelease}"
 
 case "${level}" in
@@ -116,7 +129,7 @@ if [[ "${level}" == "master" ]]; then
 else
   next=$(semver -i ${level} ${curr} --preid ${pre})
 
-  if [[ "${curr}" == $(git describe --exact-match head 2>/dev/null) ]]; then
+  if [[ "${force}" != 1 && "${curr}" == $(git describe --exact-match head 2>/dev/null) ]]; then
     error "current commit is a release"
   fi
 fi
