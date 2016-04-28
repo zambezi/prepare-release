@@ -1,5 +1,5 @@
 {
-  "name": "prepare-release",
+  "name": "@zambezi/prepare-release",
   "version": "0.3.0",
   "description": "Utilities to prepare a repository for releasing to npm",
   "bin": {
