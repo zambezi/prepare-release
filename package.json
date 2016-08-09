@@ -1,6 +1,6 @@
 {
   "name": "@zambezi/prepare-release",
-  "version": "1.0.0-open-source.1",
+  "version": "1.0.0",
   "description": "Utility to prepare a project for release to npm",
   "bin": {
     "prepare-release": "bin/prepare-release.sh"
