@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        <title>Rationale | prepare-release</title>
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+    
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+    
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+    
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-zambezi-docs/styles.css">
+    
+  
+  
+
+        
+  
+  
+  <link rel="next" href="./CONTRIBUTING.html" />
+  
+  
+  <link rel="prev" href="./index.html" />
+  
+
+        
+    </head>
+    <body>
+        
+        
+<div class="book" data-level="1" data-chapter-title="Rationale" data-filepath="RATIONALE.md" data-basepath="." data-revision="Tue Aug 09 2016 20:03:36 GMT+0200 (CEST)">
+  
+
+<nav class="book-summary" role="navigation">
+  <ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+  
+    <li class="chapter chapter-root"
+        data-level="0"
+        
+          data-path="index.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="Introduction" href="./index.html">
+        
+            Introduction
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter active chapter-root"
+        data-level="1"
+        
+          data-path="RATIONALE.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="Rationale" href="./RATIONALE.html">
+        
+            Rationale
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter chapter-root"
+        data-level="2"
+        
+          data-path="CONTRIBUTING.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="How to contribute" href="./CONTRIBUTING.html">
+        
+            How to contribute
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter chapter-root"
+        data-level="3"
+        
+          data-path="AUTHORS.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="Authors" href="./AUTHORS.html">
+        
+            Authors
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter chapter-root"
+        data-level="4"
+        
+          data-path="LICENSE.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="License" href="./LICENSE.html">
+        
+            License
+          </a>
+      
+      
+    </li>
+  
+
+  </ul>
+</nav>
+
+  <div class="book-body">
+    
+
+<header class="book-header stack" role="navigation">
+  
+  <a href="" rel="summary"
+    title="Table of Contents" aria-label="Table of Contents"
+    class="summary-toggle panel"
+    onclick="return false">
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-summary.svg">
+        Table of Contents
+      </object>
+    </span>
+  </a>
+
+  
+  <div class="book-header-tools panel">
+    
+      
+  <a href="https://github.com/zambezi/prepare-release/edit/open-source/RATIONALE.md" rel="edit"
+    title="Edit this page!" aria-label="Edit this page!"
+    
+    >
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-edit.svg">
+        Edit this page!
+      </object>
+    </span>
+  </a>
+
+    
+
+    
+  </div>
+</header>
+
+    <div class="body-inner">
+      <main class="page-wrapper" tabindex="-1" role="main">
+        <article class="page-inner">
+        
+        
+        
+          <section class="normal" id="section-">
+          
+            <h1 id="preparerelease">prepare-release</h1>
+<p>Preparing releases can be a chore, and prone to error. This utility helps you prepare a project for release to npm, by setting the correct version according to input or convention, and making sure everything is tagged properly.</p>
+<p>This tool is specifically geared to producing releases for npm, meaning its primary target is <code>package.json</code>. It otherwise doesn&apos;t make any assumptions about the project, but tries to be as agnostic as possible.</p>
+<p>Another goal of this tool is to play well with CI systems and other automation tools.</p>
+
+          
+          </section>
+        
+        
+        </article>
+      </main>
+    </div>
+
+    
+
+    
+      
+  <a href="./index.html" rel="prev"
+    title="Previous page: Introduction" aria-label="Previous page: Introduction"
+    class="navigation navigation-prev"
+    >
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-prev.svg">
+        Previous page: Introduction
+      </object>
+    </span>
+  </a>
+
+    
+    
+      
+  <a href="./CONTRIBUTING.html" rel="next"
+    title="Next page: How to contribute" aria-label="Next page: How to contribute"
+    class="navigation navigation-next"
+    >
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-next.svg">
+        Next page: How to contribute
+      </object>
+    </span>
+  </a>
+
+    
+    
+
+<footer class="book-footer panel" role="contentinfo">
+  
+  <a href="" rel=""
+    title="Powered by Zambezi" aria-label="Powered by Zambezi"
+    class="powered-by no-t"
+    onclick="return false">
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-powered-by.svg">
+        Powered by Zambezi
+      </object>
+    </span>
+  </a>
+
+</footer>
+
+  </div>
+</div>
+
+        
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-zambezi-docs/book.js"></script>
+  
+
+
+        
+    </body>
+    
+</html>

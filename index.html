@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        <title>Introduction | prepare-release</title>
+        <meta name="description" content="Preparing releases can be a chore, and prone to error. This utility helps you prepare a project for release to npm, by setting the correct version according to input or convention, and making sure everything is tagged properly.">
+        <meta name="generator" content="GitBook 2.6.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+    
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+    
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+    
+  
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-zambezi-docs/styles.css">
+    
+  
+  
+
+        
+  
+  
+  <link rel="next" href="./RATIONALE.html" />
+  
+  
+
+        
+    </head>
+    <body>
+        
+        
+<div class="book" data-level="0" data-chapter-title="Introduction" data-filepath="README.md" data-basepath="." data-revision="Tue Aug 09 2016 20:03:36 GMT+0200 (CEST)">
+  
+
+<nav class="book-summary" role="navigation">
+  <ul class="summary">
+    
+    
+    
+    
+
+    
+
+    
+  
+    <li class="chapter active chapter-root"
+        data-level="0"
+        
+          data-path="index.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="Introduction" href="./index.html">
+        
+            Introduction
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter chapter-root"
+        data-level="1"
+        
+          data-path="RATIONALE.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="Rationale" href="./RATIONALE.html">
+        
+            Rationale
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter chapter-root"
+        data-level="2"
+        
+          data-path="CONTRIBUTING.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="How to contribute" href="./CONTRIBUTING.html">
+        
+            How to contribute
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter chapter-root"
+        data-level="3"
+        
+          data-path="AUTHORS.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="Authors" href="./AUTHORS.html">
+        
+            Authors
+          </a>
+      
+      
+    </li>
+  
+    <li class="chapter chapter-root"
+        data-level="4"
+        
+          data-path="LICENSE.html"
+        >
+      
+        
+          <a class="chapter-title" data-title="License" href="./LICENSE.html">
+        
+            License
+          </a>
+      
+      
+    </li>
+  
+
+  </ul>
+</nav>
+
+  <div class="book-body">
+    
+
+<header class="book-header stack" role="navigation">
+  
+  <a href="" rel="summary"
+    title="Table of Contents" aria-label="Table of Contents"
+    class="summary-toggle panel"
+    onclick="return false">
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-summary.svg">
+        Table of Contents
+      </object>
+    </span>
+  </a>
+
+  
+  <div class="book-header-tools panel">
+    
+      
+  <a href="https://github.com/zambezi/prepare-release/edit/open-source/README.md" rel="edit"
+    title="Edit this page!" aria-label="Edit this page!"
+    
+    >
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-edit.svg">
+        Edit this page!
+      </object>
+    </span>
+  </a>
+
+    
+
+    
+  </div>
+</header>
+
+    <div class="body-inner">
+      <main class="page-wrapper" tabindex="-1" role="main">
+        <article class="page-inner">
+        
+        
+          <img class="logo logo-main" src="">
+        
+        
+          <section class="normal" id="section-">
+          
+            <h1 id="preparerelease">prepare-release</h1>
+<p>Preparing releases can be a chore, and prone to error. This utility helps you prepare a project for release to npm, by setting the correct version according to input or convention, and making sure everything is tagged properly.</p>
+<h2 id="installation">Installation</h2>
+<p>If used locally, for instance in project scripts, it is recommended you install <code>prepare-release</code> as a local developer dependency:</p>
+<pre><code class="lang-bash">npm install --save-dev @zambezi/prepare-release
+</code></pre>
+<p>It&apos;s also possible to install this tool globally:</p>
+<pre><code class="lang-bash">npm install --save-dev @zambezi/prepare-release
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-bash">prepare-release [--dry] [<span class="hljs-operator">-f</span>|--force] &lt;level&gt; [-m|--message &lt;message&gt;]
+</code></pre>
+<h2 id="dry"><code>[--dry]</code></h2>
+<p>Perform a dry-run instead of committing a new version. Useful
+when checking to see that the given options will have the
+intended effect.</p>
+<h2 id="fforce"><code>[-f|--force]</code></h2>
+<p>Ignore the previous commit when preparing a release. This is
+useful when going from a pre-release version to an untagged
+version.</p>
+<h2 id="level"><code>&lt;level&gt;</code></h2>
+<p>Defines the semver level to use when incrementing the version.
+Level can be one of: master, major, minor, patch, premajor,
+preminor, prepatch, or prerelease.</p>
+<p>Default level is &apos;prerelease&apos;.</p>
+<p>When using any of the &apos;pre-&apos; levels, the current branch name
+will be included in the version number, to clearly indicate
+the pre-release nature of the new version.</p>
+<p>The level &apos;master&apos; is special, and should only be used when
+transitioning from a &apos;pre-&apos; level version. E.g. when moving
+from &apos;v1.0.0-rc.0&apos; to &apos;v1.0.0&apos; then &apos;master&apos; should be used.
+The semantics of this is to say the only difference from the
+previous &apos;pre-&apos; level version is the lack of a &apos;pre-&apos; label.</p>
+<p>The &apos;master&apos; level will have no effect if the current version
+is <em>not</em> a &apos;pre-&apos; level version; and the program will exit
+with a non-zero exit code.</p>
+<h2 id="mmessage-message"><code>[-m|--message &lt;message&gt;]</code></h2>
+<p>Optional message to use for the version commit. If the message
+contains %s it will be replaced with the resulting version.</p>
+<p>Preparing a release can only be done in a clean working directory,
+and will fail if the working directory is dirty. Files not being
+tracked will also cause the release process to fail.</p>
+<p>Preparing a release will also fail if the HEAD on the current
+branch is also a release commit, in order to avoid duplicates.
+The only exception to this rule is when transitioning from a
+&apos;pre-&apos; level version to a &apos;master&apos; level version.</p>
+<h2 id="found-an-issue-or-want-to-contribute">Found an issue, or want to contribute?</h2>
+<p>If you find an issue, want to start a discussion on something related to this project, or have suggestions on how to improve it? Please <a href="../../issues/new">create an issue</a>!</p>
+<p>See an error and want to fix it? Want to add a file or otherwise make some changes? All contributions are welcome! Please refer to the <a href="CONTRIBUTING.html">contribution guidelines</a> for more information.</p>
+<h2 id="license">License</h2>
+<p>Please refer to the <a href="LICENSE.html">license</a> for more information on licensing and copyright information.</p>
+
+          
+          </section>
+        
+        
+        </article>
+      </main>
+    </div>
+
+    
+
+    
+    
+      
+  <a href="./RATIONALE.html" rel="next"
+    title="Next page: Rationale" aria-label="Next page: Rationale"
+    class="navigation navigation-next"
+    >
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-next.svg">
+        Next page: Rationale
+      </object>
+    </span>
+  </a>
+
+    
+    
+
+<footer class="book-footer panel" role="contentinfo">
+  
+  <a href="" rel=""
+    title="Powered by Zambezi" aria-label="Powered by Zambezi"
+    class="powered-by no-t"
+    onclick="return false">
+    <span class="button-inner">
+      <object type="image/svg+xml" data="gitbook/plugins/gitbook-plugin-zambezi-docs/images/icon-powered-by.svg">
+        Powered by Zambezi
+      </object>
+    </span>
+  </a>
+
+</footer>
+
+  </div>
+</div>
+
+        
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+  
+
+  
+  <script src="gitbook/plugins/gitbook-plugin-zambezi-docs/book.js"></script>
+  
+
+
+        
+    </body>
+    
+</html>
