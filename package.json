@@ -1,20 +1,20 @@
 {
   "name": "@zambezi/prepare-release",
-  "version": "0.4.0",
-  "description": "Utilities to prepare a repository for releasing to npm",
+  "version": "1.0.0",
+  "description": "Utility to prepare a project for release to npm",
   "bin": {
     "prepare-release": "bin/prepare-release.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zambezi-websdk/prepare-release.git"
+    "url": "git+https://github.com/zambezi/prepare-release.git"
   },
   "author": "Marcus Stade <marcus@stade.se> (http://madebystade.se/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zambezi-websdk/prepare-release/issues"
+    "url": "https://github.com/zambezi/prepare-release/issues"
   },
-  "homepage": "https://github.com/zambezi-websdk/prepare-release#readme",
+  "homepage": "https://github.com/zambezi/prepare-release#readme",
   "dependencies": {
     "npm-inspect": "0.4.0",
     "semver": "5.0.3"
